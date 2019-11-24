@@ -1,0 +1,23 @@
+#!/usr/bin/env  Rscript
+
+require('bookdown')
+args = commandArgs(trailingOnly=TRUE)
+
+outdir = "pdf"
+format <- "bookdown::pdf_book"
+if(length(args) > 0){
+	if (args[1] == 'gitbook') {
+		format <- "bookdown::gitbook"
+		outdir = "gitbook"
+	}
+}
+
+# for some reason output_dir=outdir is not working,
+# the interpreter some how couldn't found outdir, and raise an error
+
+if (outdir == "pdf"){
+	bookdown::render_book('index.Rmd', format, output_dir="pdf")
+} else if (outdir == "gitbook"){
+	bookdown::render_book('index.Rmd', format, output_dir="gitbook")
+}
+

@@ -1,0 +1,15 @@
+---
+title: 计算机网络- Computer Networks
+header-includes:
+  - \usepackage{ctex}
+output: 
+  bookdown::gitbook:
+    lib_dir: "assets"
+  bookdown::pdf_book:
+    latex_engine: xelatex 
+---
+\newpage
+# Preface
+This is some templates, you should change it
+
+
